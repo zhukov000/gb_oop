@@ -28,9 +28,6 @@ void task1() {
 
     IntVector b = a;
 
-    std::cout << "Vector a: " << a << std::endl;
-    std::cout << "a[1] = " << a[1] << std::endl;
-
     b.pop_front();
     b.push_back(-10);
     b.push_back(100);
@@ -40,6 +37,9 @@ void task1() {
     b.push_back(30);
     b.sort();
     b.pop_back();
+
+    std::cout << "Vector a: " << a << std::endl;
+    std::cout << "a[1] = " << a[1] << std::endl;
 
     std::cout << "Vector b: " << b << std::endl;
     std::cout << "Vector b size = " << b.size()
