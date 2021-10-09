@@ -26,7 +26,8 @@ namespace ReadInput {
         std::getline(in >> std::ws, line);
         const char spaces[] {' ', '\n', '\t'};
         line.erase(line.find_last_not_of(spaces) + 1);
-        if (line.empty() || std::count_if(line.begin(), line.end(),[](uchar c) { return !std::isdigit(c); })) {
+        size_t sign_shift = (line[0] == '-' ? 1 : 0);
+        if (line.empty() || std::count_if(line.begin() + sign_shift, line.end(),[](uchar c) { return !std::isdigit(c); })) {
             return false;
         }
         result = std::stoi(line);
